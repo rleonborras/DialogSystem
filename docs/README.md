@@ -1,4 +1,4 @@
-### HEADER
+### WHO AM I?
 
 I am Roger leon, student of the Bachelor’s Degree in Video Games by UPC at CITM, and 3D artist in my spare time.This content is made for the second year’s subject Project 2, under supervision of Ricard Pillosu and Marc Garrigó
 
@@ -27,12 +27,19 @@ We found the most basic ones, such as non-interactive and simple choices, which,
 Then we start with the two most complex, the Hub and Spoke and the Waterfall. To understand the Hub and Spoke we can look at games like Skyrim or Baldur's Gate, since every dialogue that is presented to us is repeated and at any time we can rewind the text and repeat it as many times as we want. We will rarely be given a definitive option that greatly influences history Example:
 
 -NPC- Hello! Are you the Dragonborn? YES-NO
+
 -PLAYER- NO
+
 -NPC- Ah okay sorry,bye bye.
+
 START CONVERSATION AGAIN
+
 -NPC- Hello! Are you the Dragonborn? YES-NO
+
 -PLAYER- YES
+
 -NPC- Wow! I Want to be like you!
+
 -FINISH.
 
 And here it stays. On the other hand, the Waterfall way would be the hardcore mode of the dialogues, in which when a user responds to a question from an NPC, it can not be repeated, being most of the times a choice that usually affects the story. A perfect example today would be Detroit Become Human, where the user almost at any time has to make a decision that apart from being non-repetitive greatly influences the progression of the game.
@@ -84,7 +91,7 @@ In this class we will define what ID the node will contain (to load it with an X
 
 Finally, the class of the dialog options will contain both a variable to support the text and to point to the next node. It will also help us to determine (in my case) if we want the text to be restarted when selecting this option (the Hub and Spoke style) or any attribute, as in Skyrim and the level of influence, in which if this option requires having a highest level of the current one or it is not shown or can not be selected.
 
-Time to SetUp the Nodes! :
+**Time to SetUp the Nodes! :**
 
 
 With this we covered the first part of our diagram, of course there’s a better and faster way to do this kind of dialogs but i thought that in order to understand how is structured a branch dialog tree it’s a good idea make the first steps manually. 
@@ -106,15 +113,15 @@ To correctly structure a single conversation we start by defining the ID of the 
 
 
 
-**<Dialog ID />**  This is where we define our conversation, keep in mind to increase the value of ID to each dialogue.
+**Dialog ID**  This is where we define our conversation, keep in mind to increase the value of the ID each dialogue.
 
-**<Node/>** It is the core of the conversation, where we will define both the options and the text.
-	<attributes> In this section, we will place any variable that helps us better control or interpret the text better.
+**Node** It is the core of the conversation, where we will define both the options and the text.
+**Attributes** In this section, we will place any variable that helps us to have better control or interpret the text better.
 
-**<NPCTalk/>** Here we define the text that the Npc will say in the corresponding node.
-**<Option>** Each option that we want to implement our conversation should be defined by this label. It is who will contain the necessary information to know which node we will point to. I have also defined a startAgain variable, to control if I want to start the event again.
+**NPCTalk** Here we define the text that the Npc will say in the corresponding node.
+**Option** Each option that we want to implement our conversation should be defined by this label. It is who will contain the necessary information to know which node we will point to. I have also defined a startAgain variable, to control if I want to start the event again.
 
-IMPORTANT! : In my case, I have defined that when the NextNode return "0" implies that the dialog in which this node is has no Options (if it is only), and if returns "-1" means that the text is finished when selecting this option.
+**IMPORTANT!** : In my case, I have defined that when the NextNode return "0" implies that the dialog in which this node is has no Options (if it is only), and if returns "-1" means that the text is finished when selecting this option.
 
 By repeating the process step by step, we can create as many dialogues as we want.
 
@@ -123,64 +130,63 @@ Once I understand how to structure a branch tree Dialog and the XML it is time t
 ## THE FUNCTIONS 
 First of all, it is necessary to know that the system in which I use my dialogues depends a lot on the dialog textures that we have selected, since the text will be totally adapted to the form that the Chart dialogue has. Therefore we start using the two functions that create us both the characters and the charts:
 
-bool createCharacters(pugi::xml_document &Dialog) ->this function creates the characters defined in the XML.
+**bool createCharacters(pugi::xml_document &Dialog)** ->this function creates the characters defined in the XML.
 
-bool SetUpCharts(pugi::xml_document &Dialog)-> this function creates the Dialog Charts defined in the XML.
+**bool SetUpCharts(pugi::xml_document &Dialog)** -> this function creates the Dialog Charts defined in the XML.
 
 Once we have this, we declare what our first Dialogue will be and with the corresponding function to create it.
 
-Dialogue* createDialog(pugi::xml_document& Dialog, int ID) -> This function returns a set of nodes that will form our dialog defined in the XML depending on the ID that we give it. Remember to add each dialog to the list of dialogs in order to clean them later.
+**Dialogue createDialog(pugi::xml_document& Dialog, int ID)** -> This function returns a set of nodes that will form our dialog defined in the XML depending on the ID that we give it. Remember to add each dialog to the list of dialogs in order to clean them later.
 
-void StartDialogEvent(Dialogue* Dialog) -> Finally we have this function that will help us to start any dialogue event;
-
-
-NOW it’s your turn! 
-
-_TODO 0_ : 
-Here you have a little bit of work, Open paint, Photoshop or some Diagram software and make your own diagram. Only two or three nodes like the example i’ve done.
-
-TODO 0.1 : Now in the XML file start writing the first Node.
-
-TODO 0.1 - SOLUTION  I used the diagram used below, and Added to the first NPCTalk, in this case I’ve only added one Character, you are free to use as many characters as you want
+**void StartDialogEvent(Dialogue Dialog)** -> Finally we have this function that will help us to start any dialogue event;
 
 
+## NOW it’s your turn! 
 
-TODO 1: Create the options In order to answer the NPC dialog, remember later to point the next node to the correct answer!.
+**TODO 0 : Here you have a little bit of work, Open paint, Photoshop or some Diagram software and make your own diagram. Only two or three nodes like the example i’ve done.**
 
-TODO 1 - SOLUTION Remember to Add later the NextNode ID
+**TODO 0.1 : Now in the XML file start writing the first Node.**
 
-
-TODO 2: Create the new Node following your diagram to answer the firsts options.
-
-TODO 3: Now make all the nodes to complete the diagram!
-
-TODO 2&3 - SOLUTION  With some patience You can create a full dialog. Have in account the variables of StartAgain if you want to restart the dialog when it finish.
-
-
-TODO 4 : Create the Dialog_List and a new dialog and use the correct function to fill it. remember to add it to the list.
-
-TODO 4 - SOLUTION  Remember to use the correct Dialog ID.
-
-
-TODO 5: Create a new treeDialogNode and fill its variables in order to define it, Remember the main functions as SetNodeID()
-
-TODO 5 - SOLUTION : See the functions of the treeDialog node and fill it with the correct names.
-
-
-TODO 6:  Write the condition to explore the next node ID in order to point from the dialogOption to the nextNode
-
-TODO 6 - SOLUTION : This is a tricky one, in order to point the nexnode variable correctly from the XML you have to go through all the tree to fund the correct treeDialogNode with the correct ID ( i’ve already done  ) so compare if the iD of the Item Options with the treedialogNode and point it correctly
-
-
-TODO 7: Go through the list in order to call the cleanUp of the inner attribute
-
-TODO 7 - SOLUTION : create a list and go through the treeDialogNode and DialogOptions and do a CleanUp();
+**TODO 0.1 - SOLUTION** I used the diagram used below, and Added to the first NPCTalk, in this case I’ve only added one Character, you are free to use as many characters as you want
 
 
 
-TODO 8: Call the function to start the dialog!.
+**TODO 1: Create the options In order to answer the NPC dialog, remember later to point the next node to the correct answer!.**
 
-TODO 8 - The last One! You only have to call the StartDialogEcent() with the Dialog you have already created and Voila! now you might able to see and interact with the blue square!
+**TODO 1 - SOLUTION** Remember to Add later the NextNode ID
+
+
+**TODO 2: Create the new Node following your diagram to answer the firsts options.**
+
+**TODO 3: Now make all the nodes to complete the diagram!**
+
+**TODO 2&3 - SOLUTION**  With some patience You can create a full dialog. Have in account the variables of StartAgain if you want to restart the dialog when it finish.
+
+
+**TODO 4 : Create the Dialog_List and a new dialog and use the correct function to fill it. remember to add it to the list.**
+
+**TODO 4 - SOLUTION**  Remember to use the correct Dialog ID.
+
+
+**TODO 5: Create a new treeDialogNode and fill its variables in order to define it, Remember the main functions as SetNodeID()**
+
+**TODO 5 - SOLUTION**  See the functions of the treeDialog node and fill it with the correct names.
+
+
+**TODO 6:  Write the condition to explore the next node ID in order to point from the dialogOption to the nextNode**
+
+**TODO 6 - SOLUTION**  This is a tricky one, in order to point the nexnode variable correctly from the XML you have to go through all the tree to fund the correct treeDialogNode with the correct ID ( i’ve already done  ) so compare if the iD of the Item Options with the treedialogNode and point it correctly
+
+
+**TODO 7: Go through the list in order to call the cleanUp of the inner attribute**
+
+**TODO 7 - SOLUTION** create a list and go through the treeDialogNode and DialogOptions and do a CleanUp();
+
+
+
+**TODO 8: Call the function to start the dialog!.**
+
+**TODO 8 - SOLUTION** The last One! You only have to call the StartDialogEcent() with the Dialog you have already created and Voila! now you might able to see and interact with the blue square!
 
 
 
@@ -195,4 +201,4 @@ Now the code it’s yours, With all my effort i made a simple final fantasy look
 Thanks to all those who have had the patience and curiosity to read my research and I ask you, please, send me to rleonborras@gmail.com any questions you have or show me all your designs!
 
 
-WEBGRAPHY
+## WEBGRAPHY
