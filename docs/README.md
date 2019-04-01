@@ -237,9 +237,10 @@ Once we have this, we declare what our first Dialogue will be and with the corre
 
 Now the code it’s yours, With all my effort i made a simple final fantasy look like game to show who the potential can be if you use all your imagination. Now, the limit is the SKY!.
 
-
-
-
+<p align="center">
+<img src="Sample_Code_Given.gif" ><br>
+  Source Code to see as a example
+</p>
 
 
 
