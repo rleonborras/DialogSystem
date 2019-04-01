@@ -232,3 +232,20 @@ Thanks to all those who have had the patience and curiosity to read my research 
 
 
 ## WEBGRAPHY
+[Ron Gibert Blog, Puzzle Dialogs](https://blog.thimbleweedpark.com/dialog_puzzles)
+
+[Alexander Freed, Typology and writing a Branching Dialog tree](http://www.gamasutra.com/blogs/AlexanderFreed/20140902/224609/Branching_Conversation_Systems_and_the_Working_Writer_Part_1_Introduction.php)
+
+[Analysis of structure of a DialogTree](https://www.gamasutra.com/view/news/114503/Analysis_Conversation_Design_In_Games.php)
+
+[Deep Patterns of dialog systems](http://www.digra.org/wp-content/uploads/digital-library/09287.59480.pdf)
+
+[Designing a dialog system](https://thegamekitchen.com/blog/designing-a-dialog-system-for-chapter-two/)
+
+[Dialog system for unity, how it works](https://holistic3d.com/news-tips/dialogue-tree-tutorial/)
+
+[TreeDialog systems with Pointers](https://www.youtube.com/watch?v=W4TV-_-Wcw4)
+
+
+
+
