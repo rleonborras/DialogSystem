@@ -11,6 +11,11 @@ Coinciding with Alexander Freed's, a best-seller novelist and professional in th
 
 Given my notions in programming and narrative, it has been a challenge to address this issue but after hours of research my interest could not do more than grow. So.. A Dialog System is a complex system of nodes in which each node contains certain information of an NPC to be able to take place a simulated conversation, either interactively or a simple narration with the player.
 
+<p align="center">
+<img src="Dialog_System_Node_Based_Unity.PNG" width="500" height="300" ><br>
+Node based dialog system for Unity
+</p>
+
 I can not talk about Dialog Systems without talking about Ron Gilbert, one of the precursors of the narrative in video games, such as Monkey Island, Maniac mansion or Thimbleweed Park, and he is not only a scriptwriter he’s also a programmer, and when two things so powerful join, only good things can come out, which we could define as the first Branch Dialog Trees, or as he calls them, Puzzle dialogs. I am not saying that he was the precursor of the Dialog Trees but where they shone, reaching the fame that Monkey Island had.
 
 After looking for hours and hours on how to classify something as abstract as the Dialog Systems I will build on Alexander Freed's classification of the subject, which I personally think is exceptional. We can find several types of Dialog systems, which are explained alone, such as Non-Interactive or Simple Choices, on which the majority of currently successful games are based, such as Call of Duty or God of War. There are also those that by definition are usually RPG / RPG games, such as Hub and Spoke and Waterfall.
@@ -42,8 +47,18 @@ START CONVERSATION AGAIN
 -NPC- Wow! I Want to be like you!
 
 -FINISH.
+<p align="center">
+<img src="Fallout_SpokeAndHub.jpg" width="800" height="300" ><br>
+Fallout 3-NV-4 example of Speak and Hub
+</p>
 
 And here it stays. On the other hand, the Waterfall way would be the hardcore mode of the dialogues, in which when a user responds to a question from an NPC, it can not be repeated, being most of the times a choice that usually affects the story. A perfect example today would be Detroit Become Human, where the user almost at any time has to make a decision that apart from being non-repetitive greatly influences the progression of the game.
+
+<p align="center">
+<img src="Dialog_Banner_Saga2.jpg" width="500" height="300" ><br>
+Banner Saga 2 example of waterfall
+</p>
+
 
 But since these last two methods are very versatile and useful when making an interactive text, it is very common to find them together, generating moments of tension when it is a game with dialogues Hub and spoke with touches of waterfall and generating a way to explore history more deeply when it is a waterfall with touches of Hub and Spoke, as Alexander Freed's himself affirms in his dialogues of Mass effect.
 
