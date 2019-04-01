@@ -39,7 +39,7 @@ And here it stays. On the other hand, the Waterfall way would be the hardcore mo
 
 But since these last two methods are very versatile and useful when making an interactive text, it is very common to find them together, generating moments of tension when it is a game with dialogues Hub and spoke with touches of waterfall and generating a way to explore history more deeply when it is a waterfall with touches of Hub and Spoke, as Alexander Freed's himself affirms in his dialogues of Mass effect.
 
- ##So, How to develop and organize a Branch tree Dialog?
+## So, How to develop and organize a Branch tree Dialog?
 
 Normally it depends on the type you prefer to develop, but I'm going to focus on a mixture of Hub and spoke and Waterfall, since I think they are the two most interesting options and although we only touch the surface of what could be, I will try to explain the basic mechanisms and organization of these two types.
 
@@ -59,13 +59,13 @@ Now we can see how the thing is getting complicated. Each node has its own optio
 
 Starting from the previous scheme, we will begin to define our classes. My option has been to define a parent class that will control the current node (later I will generate one more class to control more than one Dialog) called Dialog System, in which a current node will be defined, and a list of tree Dialog nodes, which is the second class that we will define where we will create variables that support texts and a list of the last class, the Dialog Options. I want to comment that I will not focus on how I have done the behavior code of each class, if you want to observe how I did it in the end you can download the whole project.
 
-##class Dialog System() 
+## class Dialog System ()
 
 
 
 As I explained before, this class will be where we control which node we will be pointing to and where we will load our list of nodes. (The variable Influence Level will be used later to explain how to add parameters to our list).
 
-##class TreeDialogNode()
+## class TreeDialogNode()
 
 
 
@@ -78,7 +78,7 @@ In this class we will define what ID the node will contain (to load it with an X
 
 
 
-##class DialogOptions() 
+## Class DialogOptions()
 
 
 
@@ -95,7 +95,7 @@ Once we understand the theory of how a small dialogue develops we will go one st
 
 At this point one can begin to understand how cumbersome it would be to design a whole system of interactive dialogues manually adding nodes, one by one with their consequent choices in each of the characters ... would it become eternal truth? luckily there are many tools that facilitate this work, such as Chat-Mapper or game tools such as Dragon Age or neverwinter, but for this work I will focus on explaining how to make your own XML because although the editors mentioned above are very powerful many are paid or non-commercial and are node-based (although several of the node-based have options to export to JSON).
 
-How to organize an XML for a Dialog System?
+## How to organize an XML for a Dialog System?
 
 The most important thing before starting the XML is to create a diagram of how the dialogues will happen, in order to create a first image of where i will point to each node. Starting from the base of the scheme that we have been using we will start defining our XML correctly. The best option is to divide the dialogues as well as the nodes into sections, giving great importance to the IDs.
 I recommend starting with a small section where we will save variables of need to make a correct Setup of our dialogues, such as Characters, Dialog Charts, paths ... etc:
@@ -106,13 +106,13 @@ To correctly structure a single conversation we start by defining the ID of the 
 
 
 
-<Dialog ID />  This is where we define our conversation, keep in mind to increase the value of ID to each dialogue.
+**<Dialog ID />**  This is where we define our conversation, keep in mind to increase the value of ID to each dialogue.
 
-<Node/> It is the core of the conversation, where we will define both the options and the text.
+**<Node/>** It is the core of the conversation, where we will define both the options and the text.
 	<attributes> In this section, we will place any variable that helps us better control or interpret the text better.
 
-<NPCTalk/> Here we define the text that the Npc will say in the corresponding node.
-<Option> Each option that we want to implement our conversation should be defined by this label. It is who will contain the necessary information to know which node we will point to. I have also defined a startAgain variable, to control if I want to start the event again.
+**<NPCTalk/>** Here we define the text that the Npc will say in the corresponding node.
+**<Option>** Each option that we want to implement our conversation should be defined by this label. It is who will contain the necessary information to know which node we will point to. I have also defined a startAgain variable, to control if I want to start the event again.
 
 IMPORTANT! : In my case, I have defined that when the NextNode return "0" implies that the dialog in which this node is has no Options (if it is only), and if returns "-1" means that the text is finished when selecting this option.
 
@@ -120,7 +120,7 @@ By repeating the process step by step, we can create as many dialogues as we wan
 
 Once I understand how to structure a branch tree Dialog and the XML it is time to move on to control the code that I leave below. To control the library that I have created it is necessary to take into account some Functions.
 
-THE FUNCTIONS 
+## THE FUNCTIONS 
 First of all, it is necessary to know that the system in which I use my dialogues depends a lot on the dialog textures that we have selected, since the text will be totally adapted to the form that the Chart dialogue has. Therefore we start using the two functions that create us both the characters and the charts:
 
 bool createCharacters(pugi::xml_document &Dialog) ->this function creates the characters defined in the XML.
