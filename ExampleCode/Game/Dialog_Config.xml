@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<!-- Settup Dialog for the game -->
+<DialogSettup>
+    <SettupOptions speed="0.5" scale ="3" YMargin="15" > <!--The Y margin is the space from the top of the chart-->
+      <DialogueChartTexture path="textures/Elements_To_Demo.png"/>
+      <Characters> 
+        <Character ID="0" x="0" y="61" w="59" h="81"/>
+        <Character ID="1" x="62" y="0" w="45" h="56"/>
+        <Character ID="2" x="0" y="0" w="62" h="61"/>
+      </Characters>
+      <DialogChart>
+       <MainPart x="108" y="0" w="78" h="54"/>
+       <EndingPart x="187" y="0" w="23" h="54"/>
+      </DialogChart>
+    </SettupOptions>
+  <Dialogs>
+    <Dialog ID="0">
+      <Node ID="0" CharacterID="2" NPC_Position="0" Options_Position ="2"> <!--NPC_POSITION -> TOP_LEFT=0 TOP_RIGHT=1 DOWN_LEFT=2 DOWN_RIGHT=3-->
+        <NPCTalk>Hey dude I'm Dave! What're you looking for?</NPCTalk>
+        <Option ID="0" NextNode="0" /><!--This node is used to no have an option-->
+        <Option ID="1" NextNode="2">Some kind of meal</Option>
+        <Option ID="2" NextNode ="1" startAgain="true">"..."</Option>
+        <Option ID="2" NextNode ="3" influenceLevel ="30">"Give me your best Food"</Option>
+      </Node>
+      <Node ID="1" CharacterID="2" NPC_Position="0" Options_Position ="2">
+        <NPCTalk>You are not gonna answer me?</NPCTalk>
+        <Option ID="0" NextNode="-1"/><!--When a node returns -1 the dialog will finish-->
+        </Node>
+      <Node ID="2" CharacterID="2" NPC_Position="0" Options_Position ="2">
+        <NPCTalk>I Don't Know if u are in the right place dude, turn from where u come from</NPCTalk>
+        <Option ID="0" NextNode="-1"/>
+      </Node>
+      <Node ID="3" CharacterID="2" NPC_Position="0" Options_Position ="2">
+        <NPCTalk>Okay Okay! Relax, I didn't saw you are that HERO! Sorry...</NPCTalk>
+        <Option ID="0" NextNode="-1"/>
+      </Node>
+    </Dialog>
+    <Dialog ID="1">
+      <Node ID="0" CharacterID="1" NPC_Position="0" Options_Position ="2">
+        <NPCTalk>Hi! I'm Ritz, are you having a good day?</NPCTalk>
+        <Option ID="0" NextNode="0" />
+        <Option ID="1" NextNode="1">Yes!</Option>
+        <Option ID="1" NextNode="2" startAgain="true">"..."</Option>
+      </Node>
+      <Node ID="1" CharacterID="1" NPC_Position="0" Options_Position ="2">
+         <NPCTalk>Me Too! Have you ate anything yet?</NPCTalk>
+         <Option ID="0" NextNode="0" />
+         <Option ID="1" NextNode="3">Some kind of strange meat</Option>
+         <Option ID="2" NextNode="2" startAgain="true">"..."</Option>
+      </Node>
+      <Node ID="2" CharacterID="1" NPC_Position="0" Options_Position ="2">
+        <NPCTalk>You're not very talkative for what I see, don't worry, you look tired </NPCTalk>
+        <Option ID="0" NextNode="-1" />
+      </Node>
+       <Node ID="3" CharacterID="1" NPC_Position="0" Options_Position ="2">
+        <NPCTalk>Great! See you soon! </NPCTalk>
+        <Option ID="0" NextNode="-1" />
+      </Node>
+    </Dialog>
+  </Dialogs>
+</DialogSettup>

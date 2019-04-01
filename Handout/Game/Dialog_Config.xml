@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--NPC_POSITION -> TOP_LEFT=0 TOP_RIGHT=1 DOWN_LEFT=2 DOWN_RIGHT=3-->
+<!-- Settup Dialog for the game -->
+<DialogSettup>
+    <SettupOptions speed="0.5" scale ="3" YMargin="15" > <!--The Y margin is the space from the top of the chart-->
+      <DialogueChartTexture path="textures/Demo_Chart.png"/>
+      <Characters> 
+        <Character ID="0" name="Dave" x="78" y="0" w="34" h="54"/>
+      </Characters>
+      <DialogChart>
+       <MainPart x="0" y="0" w="78" h="54"/>
+      </DialogChart>
+    </SettupOptions>
+  <Dialogs>
+    <!--TODO 3 Now make all the nodes to complete the diagram!. Have in account the IDS! -->>
+    <Dialog ID="0">
+      <Node ID="0" CharacterID="0" NPC_Position="0" Options_Position ="2"> 
+        <NPCTalk>Hey Jhon! What are you doing here?</NPCTalk><!--TODO 0.1 Write the cool sentence! -->
+        <Option ID="0" NextNode="0" />
+
+        <!--TODO 1 Create the options In order to answer the NPC dialog -->
+        <!-- -1 is used to finish the conversation and 0 for situations with no more options -->
+      </Node>
+      <!--TODO 2 Create the new Node following your diagram to answer the firsts options, remember to Point the Option to this node! -->
+    </Dialog>
+  </Dialogs>
+</DialogSettup>
