@@ -1,12 +1,12 @@
-# HEADER
+### HEADER
 
 I am Roger leon, student of the Bachelor’s Degree in Video Games by UPC at CITM, and 3D artist in my spare time.This content is made for the second year’s subject Project 2, under supervision of Ricard Pillosu and Marc Garrigó
 
-# INTRODUCTION
+## INTRODUCTION
 
 Coinciding with Alexander Freed's, a best-seller novelist and professional in the industry with games such as Mass effect or Dragon Age, the creators of video games are very bad at dealing with the interaction of dialogues, and the reason is basically the complexity What it entails, it is easier to present a non-interactive story with a good narrative than to manage the complexity of a story with thousands and thousands of dialogue nodes in which each represents a piece of a possible ending. And the most important, "Games are remembered for their gameplay instead for their dialogue".
 
-# So, what’s a Dialog System? 
+## So, what’s a Dialog System? 
 
 Given my notions in programming and narrative, it has been a challenge to address this issue but after hours of research my interest could not do more than grow. So.. A Dialog System is a complex system of nodes in which each node contains certain information of an NPC to be able to take place a simulated conversation, either interactively or a simple narration with the player.
 
@@ -14,13 +14,13 @@ I can not talk about Dialog Systems without talking about Ron Gilbert, one of th
 
 After looking for hours and hours on how to classify something as abstract as the Dialog Systems I will build on Alexander Freed's classification of the subject, which I personally think is exceptional. We can find several types of Dialog systems, which are explained alone, such as Non-Interactive or Simple Choices, on which the majority of currently successful games are based, such as Call of Duty or God of War. There are also those that by definition are usually RPG / RPG games, such as Hub and Spoke and Waterfall.
 
-# Then why use Branch Tree Dialogs?
+## Then why use Branch Tree Dialogs?
 
 It is clear that when we have a protagonist like the Hero of Dragon quest IX we can not think of a Branch tree Dialog, since we are presented with a very defined storyline and a heroic deed and a character that barely speaks, but what happens when we approach a title like Baldurs Gate or Mass Effect? Missions in heaps, hundreds of dialogues to locate us and dozens of characters to each more complex at the time of having a conversation with them, which leads us to the question, how the hell can the studios face all this? The answer as you will have guessed is the Branch tree Dialogs.
 Not only can we get the player to see himself reflected with every decision he makes, but we can manage multiple narratives or attributes, a perfect example would be Skyrim, when after hundreds of hours played we have the attributes to the maximum and there is no intimidating dialogue that resists us.
 
 
-# Let’s begin with the types of tree Branch Dialog.
+## Let’s begin with the types of tree Branch Dialog.
 
 We found the most basic ones, such as non-interactive and simple choices, which, as I explained before, describe themselves, a simple tour through several nodes in which they contain the story in the case of non-interactive and small options in each node such as "Diplomacy!" or "You are far from your home" .., in the case of simple Choices, which are often used in strategy or role-playing games without much emphasis on history.
 
@@ -39,7 +39,7 @@ And here it stays. On the other hand, the Waterfall way would be the hardcore mo
 
 But since these last two methods are very versatile and useful when making an interactive text, it is very common to find them together, generating moments of tension when it is a game with dialogues Hub and spoke with touches of waterfall and generating a way to explore history more deeply when it is a waterfall with touches of Hub and Spoke, as Alexander Freed's himself affirms in his dialogues of Mass effect.
 
-So, How to develop and organize a Branch tree Dialog?
+ ##So, How to develop and organize a Branch tree Dialog?
 
 Normally it depends on the type you prefer to develop, but I'm going to focus on a mixture of Hub and spoke and Waterfall, since I think they are the two most interesting options and although we only touch the surface of what could be, I will try to explain the basic mechanisms and organization of these two types.
 
@@ -59,13 +59,13 @@ Now we can see how the thing is getting complicated. Each node has its own optio
 
 Starting from the previous scheme, we will begin to define our classes. My option has been to define a parent class that will control the current node (later I will generate one more class to control more than one Dialog) called Dialog System, in which a current node will be defined, and a list of tree Dialog nodes, which is the second class that we will define where we will create variables that support texts and a list of the last class, the Dialog Options. I want to comment that I will not focus on how I have done the behavior code of each class, if you want to observe how I did it in the end you can download the whole project.
 
-class Dialog System() 
+##class Dialog System() 
 
 
 
 As I explained before, this class will be where we control which node we will be pointing to and where we will load our list of nodes. (The variable Influence Level will be used later to explain how to add parameters to our list).
 
-class TreeDialogNode()
+##class TreeDialogNode()
 
 
 
@@ -78,7 +78,7 @@ In this class we will define what ID the node will contain (to load it with an X
 
 
 
-class DialogOptions() 
+##class DialogOptions() 
 
 
 
@@ -136,7 +136,7 @@ void StartDialogEvent(Dialogue* Dialog) -> Finally we have this function that wi
 
 NOW it’s your turn! 
 
-TODO 0 : 
+_TODO 0_ : 
 Here you have a little bit of work, Open paint, Photoshop or some Diagram software and make your own diagram. Only two or three nodes like the example i’ve done.
 
 TODO 0.1 : Now in the XML file start writing the first Node.
