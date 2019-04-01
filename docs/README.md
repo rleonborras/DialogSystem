@@ -48,7 +48,7 @@ START CONVERSATION AGAIN
 
 -FINISH.
 <p align="center">
-<img src="Fallout_SpokeAndHub.jpg" width="800" height="300" ><br>
+<img src="Fallout_SpokeAndHub.jpg" width="800" height="200" ><br>
 Fallout 3-NV-4 example of Speak and Hub
 </p>
 
